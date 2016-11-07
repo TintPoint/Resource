@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00D1D451DD00A25001B4866 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D1D441DD00A25001B4866 /* Resource.swift */; };
+		D00D1D481DD00B10001B4866 /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D1D471DD00B10001B4866 /* StringResource.swift */; };
+		D00D1D4A1DD00C35001B4866 /* StringResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D1D491DD00C35001B4866 /* StringResourceTests.swift */; };
 		D0B059B71D65902E009C84FC /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B1729A1D45A1EB0079A2F2 /* Resource.framework */; };
 		D0B172BA1D45A2220079A2F2 /* Resource.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B172AF1D45A2220079A2F2 /* Resource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -22,6 +25,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D00D1D441DD00A25001B4866 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		D00D1D471DD00B10001B4866 /* StringResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringResource.swift; sourceTree = "<group>"; };
+		D00D1D491DD00C35001B4866 /* StringResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringResourceTests.swift; sourceTree = "<group>"; };
 		D0B059B21D65902E009C84FC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B1729A1D45A1EB0079A2F2 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B172AF1D45A2220079A2F2 /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
@@ -46,6 +52,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D00D1D461DD00A31001B4866 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D00D1D441DD00A25001B4866 /* Resource.swift */,
+				D00D1D471DD00B10001B4866 /* StringResource.swift */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		D00D1D4B1DD00C5A001B4866 /* ResourceTests */ = {
+			isa = PBXGroup;
+			children = (
+				D00D1D491DD00C35001B4866 /* StringResourceTests.swift */,
+			);
+			name = ResourceTests;
+			sourceTree = "<group>";
+		};
 		D062B0F01D52469400F70C4A /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +80,7 @@
 		D0B059B31D65902E009C84FC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D00D1D4B1DD00C5A001B4866 /* ResourceTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -83,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D062B0F01D52469400F70C4A /* Header */,
+				D00D1D461DD00A31001B4866 /* Resource */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -149,12 +174,12 @@
 				TargetAttributes = {
 					D0B059B11D65902E009C84FC = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					D0B172991D45A1EB0079A2F2 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -199,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00D1D4A1DD00C35001B4866 /* StringResourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00D1D481DD00B10001B4866 /* StringResource.swift in Sources */,
+				D00D1D451DD00A25001B4866 /* Resource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,22 +251,29 @@
 		D0B059BB1D65902E009C84FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.ResourceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D0B059BC1D65902E009C84FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.ResourceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -327,6 +362,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -336,6 +373,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.Resource;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -343,6 +382,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -352,6 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.Resource;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
