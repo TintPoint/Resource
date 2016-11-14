@@ -6,8 +6,6 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import Foundation
-
 public protocol LocalizedStringDescribing {
 
     var key: String { get }
@@ -16,7 +14,7 @@ public protocol LocalizedStringDescribing {
 
 }
 
-extension LocalizedStringDescribing {
+public extension LocalizedStringDescribing {
 
     var comment: String {
         return ""
