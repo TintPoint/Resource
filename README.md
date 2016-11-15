@@ -10,8 +10,8 @@ Resource helps you to manage your project resources.
 
 ## Features
 
-- [ ] Protocol oriented design
-- [ ] Comprehensive unit test coverage
+- [x] Protocol oriented design
+- [x] Comprehensive unit test coverage
 - [ ] [Complete documentation](http://cocoadocs.org/docsets/Resource)
 
 ## Requirements

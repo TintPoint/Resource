@@ -6,10 +6,16 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
+/// A protocol that describes an item that can represent an alert controller.
 public protocol AlertControllerDescribing {
 
+    /// The `String` that will be used to represent the title of the alert controller.
     var title: String { get }
+
+    /// The `String` that will be used to represent the message of the alert controller.
     var message: String { get }
+
+    /// The `UIAlertControllerStyle` that will be used to represent the style of the alert controller.
     var style: UIAlertControllerStyle { get }
 
 }
@@ -28,6 +34,9 @@ extension AlertControllerDescribing {
 
 public extension Resource {
 
+    /// Returns a `UIAlertController` that is represented by the item that conforms to `AlertControllerDescribing`.
+    /// - Parameter describing: An item that conforms to `AlertControllerDescribing`.
+    /// - Returns: A represented alert controller.
     static func of(_ describing: AlertControllerDescribing) -> UIAlertController {
         return UIAlertController(title: describing.title, message: describing.message, preferredStyle: describing.style)
     }

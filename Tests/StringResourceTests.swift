@@ -17,7 +17,7 @@ enum StringDescription: String {
 
 extension StringDescription: StringDescribing {
 
-    var string: String {
+    var content: String {
         return rawValue
     }
 

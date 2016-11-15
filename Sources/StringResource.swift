@@ -6,16 +6,21 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
+/// A protocol that describes an item that can represent a string.
 public protocol StringDescribing {
 
-    var string: String { get }
+    /// The `String` that will be used to represent the content of the string.
+    var content: String { get }
 
 }
 
 public extension Resource {
 
+    /// Returns a `String` that is represented by the item that conforms to `StringDescribing`.
+    /// - Parameter describing: An item that conforms to `StringDescribing`.
+    /// - Returns: A represented string.
     static func of(_ describing: StringDescribing) -> String {
-        return describing.string
+        return describing.content
     }
     
 }
