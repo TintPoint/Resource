@@ -9,7 +9,6 @@
 import UserNotifications
 
 /// A protocol that describes an item that can represent a localized user notification string.
-@available(iOSApplicationExtension 10.0, *)
 public protocol LocalizedUserNotificationStringDescribing {
 
     /// The `String` that will be used to represent the key of the localized user notification string.
@@ -20,7 +19,6 @@ public protocol LocalizedUserNotificationStringDescribing {
 
 }
 
-@available(iOSApplicationExtension 10.0, *)
 public extension LocalizedUserNotificationStringDescribing {
 
     var arguments: [Any]? {
@@ -29,7 +27,6 @@ public extension LocalizedUserNotificationStringDescribing {
 
 }
 
-@available(iOSApplicationExtension 10.0, *)
 public extension Resource {
 
     /// Returns a `String` that is represented by the item that conforms to `LocalizedUserNotificationStringDescribing`.
