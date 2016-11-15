@@ -12,7 +12,7 @@ Resource helps you to manage your project resources.
 
 - [x] Protocol oriented design
 - [x] Comprehensive unit test coverage
-- [ ] [Complete documentation](http://cocoadocs.org/docsets/Resource)
+- [x] [Complete documentation](http://cocoadocs.org/docsets/Resource)
 
 ## Requirements
 
@@ -38,4 +38,24 @@ pod 'Resource', '~> 0.1'
 
 ## Getting Started
 
-*TODO*
+Define a custom enum that conforms to protocols with `Describing` postfix (list of available protocols can be found [here](#available-protocols)). For example, to manage all alert controllers, write the following code.
+
+```swift
+enum AlertControllerDescription: String, AlertControllerDescribing {
+    case databaseError
+    var title: String {
+        return rawValue.capitalized
+    }
+
+    var message: String {
+        switch self {
+        case .databaseError: return "Please try again."
+        }
+    }
+}
+```
+
+```swift
+let alertController = Resource.of(AlertControllerDescription.databaseError)
+present(alertController, animated: true)
+```
