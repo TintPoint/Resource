@@ -59,3 +59,13 @@ enum AlertControllerDescription: String, AlertControllerDescribing {
 let alertController = Resource.of(AlertControllerDescription.databaseError)
 present(alertController, animated: true)
 ```
+
+## Reference
+
+### Available Protocols
+
+> - AlertControllerDescribing
+> - LocalizedStringDescribing
+> - StoryboardDescribing
+> - StringDescribing
+> - ViewControllerDescribing
