@@ -20,7 +20,7 @@ public protocol AlertControllerDescribing {
 
 }
 
-extension AlertControllerDescribing {
+public extension AlertControllerDescribing {
 
     var message: String {
         return ""

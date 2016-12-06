@@ -19,7 +19,7 @@ public protocol AlertActionDescribing {
 
 }
 
-extension AlertActionDescribing {
+public extension AlertActionDescribing {
 
     var style: UIAlertActionStyle {
         return .default
