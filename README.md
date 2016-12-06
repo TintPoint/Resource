@@ -64,8 +64,10 @@ present(alertController, animated: true)
 
 ### Available Protocols
 
+> - AlertActionDescribing
 > - AlertControllerDescribing
 > - LocalizedStringDescribing
+> - LocalizedUserNotificationStringDescribing
 > - StoryboardDescribing
 > - StringDescribing
 > - ViewControllerDescribing

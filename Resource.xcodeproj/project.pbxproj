@@ -21,6 +21,8 @@
 		D05E133A1DDA8396004E935D /* ViewControllerResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05E13391DDA8396004E935D /* ViewControllerResourceTests.swift */; };
 		D05E133D1DDA856B004E935D /* AlertControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05E133B1DDA8509004E935D /* AlertControllerResource.swift */; };
 		D05E133F1DDA85BD004E935D /* AlertControllerResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05E133E1DDA85BD004E935D /* AlertControllerResourceTests.swift */; };
+		D084B6C91DF67BE6002ED90B /* AlertActionResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084B6C81DF67BE6002ED90B /* AlertActionResource.swift */; };
+		D084B6CB1DF67BF8002ED90B /* AlertActionResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D084B6CA1DF67BF8002ED90B /* AlertActionResourceTests.swift */; };
 		D0B059B71D65902E009C84FC /* Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B1729A1D45A1EB0079A2F2 /* Resource.framework */; };
 		D0B172BA1D45A2220079A2F2 /* Resource.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B172AF1D45A2220079A2F2 /* Resource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		D05E13391DDA8396004E935D /* ViewControllerResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerResourceTests.swift; sourceTree = "<group>"; };
 		D05E133B1DDA8509004E935D /* AlertControllerResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerResource.swift; sourceTree = "<group>"; };
 		D05E133E1DDA85BD004E935D /* AlertControllerResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerResourceTests.swift; sourceTree = "<group>"; };
+		D084B6C81DF67BE6002ED90B /* AlertActionResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertActionResource.swift; sourceTree = "<group>"; };
+		D084B6CA1DF67BF8002ED90B /* AlertActionResourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertActionResourceTests.swift; sourceTree = "<group>"; };
 		D0B059B21D65902E009C84FC /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B1729A1D45A1EB0079A2F2 /* Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B172AF1D45A2220079A2F2 /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resource.h; sourceTree = "<group>"; };
@@ -78,12 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				D00D1D441DD00A25001B4866 /* Resource.swift */,
-				D00D1D471DD00B10001B4866 /* StringResource.swift */,
+				D084B6C81DF67BE6002ED90B /* AlertActionResource.swift */,
+				D05E133B1DDA8509004E935D /* AlertControllerResource.swift */,
 				D00D1D4C1DD00DA1001B4866 /* LocalizedStringResource.swift */,
 				D05E13321DDA8208004E935D /* LocalizedUserNotificationStringResource.swift */,
 				D05E132B1DDA7DD3004E935D /* StoryboardResource.swift */,
+				D00D1D471DD00B10001B4866 /* StringResource.swift */,
 				D05E13371DDA830D004E935D /* ViewControllerResource.swift */,
-				D05E133B1DDA8509004E935D /* AlertControllerResource.swift */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -91,12 +96,13 @@
 		D00D1D4B1DD00C5A001B4866 /* ResourceTests */ = {
 			isa = PBXGroup;
 			children = (
-				D00D1D491DD00C35001B4866 /* StringResourceTests.swift */,
+				D084B6CA1DF67BF8002ED90B /* AlertActionResourceTests.swift */,
+				D05E133E1DDA85BD004E935D /* AlertControllerResourceTests.swift */,
 				D00D1D4E1DD00EC7001B4866 /* LocalizedStringResourceTests.swift */,
 				D05E13351DDA8293004E935D /* LocalizedUserNotificationStringResourceTests.swift */,
 				D05E132D1DDA7EA8004E935D /* StoryboardResourceTests.swift */,
+				D00D1D491DD00C35001B4866 /* StringResourceTests.swift */,
 				D05E13391DDA8396004E935D /* ViewControllerResourceTests.swift */,
-				D05E133E1DDA85BD004E935D /* AlertControllerResourceTests.swift */,
 			);
 			name = ResourceTests;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D084B6CB1DF67BF8002ED90B /* AlertActionResourceTests.swift in Sources */,
 				D05E13361DDA8293004E935D /* LocalizedUserNotificationStringResourceTests.swift in Sources */,
 				D00D1D4F1DD00EC7001B4866 /* LocalizedStringResourceTests.swift in Sources */,
 				D00D1D4A1DD00C35001B4866 /* StringResourceTests.swift in Sources */,
@@ -281,6 +288,7 @@
 			files = (
 				D05E13381DDA830D004E935D /* ViewControllerResource.swift in Sources */,
 				D05E13341DDA8248004E935D /* LocalizedUserNotificationStringResource.swift in Sources */,
+				D084B6C91DF67BE6002ED90B /* AlertActionResource.swift in Sources */,
 				D05E132C1DDA7DD3004E935D /* StoryboardResource.swift in Sources */,
 				D00D1D481DD00B10001B4866 /* StringResource.swift in Sources */,
 				D05E133D1DDA856B004E935D /* AlertControllerResource.swift in Sources */,
