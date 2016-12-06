@@ -26,7 +26,7 @@ extension AlertActionDescription: AlertActionDescribing {
     }
 
     var handler: ((UIAlertAction) -> ())? {
-        return nil
+        return { _ in }
     }
 
 }

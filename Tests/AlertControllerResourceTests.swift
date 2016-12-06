@@ -31,6 +31,10 @@ extension AlertControllerDescription: AlertControllerDescribing {
         return .actionSheet
     }
 
+    var actions: [UIAlertAction] {
+        return [UIAlertAction(title: "TestAction", style: .default)]
+    }
+
 }
 
 class AlertControllerResourceTests: XCTestCase {
@@ -40,6 +44,8 @@ class AlertControllerResourceTests: XCTestCase {
         XCTAssertEqual(controller.title, "Test")
         XCTAssertEqual(controller.message, "Test Message")
         XCTAssertEqual(controller.preferredStyle, .actionSheet)
+        XCTAssertEqual(controller.actions.count, 1)
+        XCTAssertEqual(controller.actions.first?.title, "TestAction")
     }
     
 }

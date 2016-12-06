@@ -18,6 +18,9 @@ public protocol AlertControllerDescribing {
     /// The `UIAlertControllerStyle` that will be used to represent the style of the alert controller.
     var style: UIAlertControllerStyle { get }
 
+    /// The array of `UIAlertAction` that will be used to represent the actions of the alert controller.
+    var actions: [UIAlertAction] { get }
+
 }
 
 public extension AlertControllerDescribing {
@@ -38,7 +41,9 @@ public extension Resource {
     /// - Parameter describing: An item that conforms to `AlertControllerDescribing`.
     /// - Returns: A represented alert controller.
     static func of(_ describing: AlertControllerDescribing) -> UIAlertController {
-        return UIAlertController(title: describing.title, message: describing.message, preferredStyle: describing.style)
+        let controller = UIAlertController(title: describing.title, message: describing.message, preferredStyle: describing.style)
+        describing.actions.forEach { controller.addAction($0) }
+        return controller
     }
     
 }
