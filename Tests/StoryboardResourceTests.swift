@@ -9,13 +9,13 @@
 import XCTest
 @testable import Resource
 
-enum StoryboardDescription: String {
+enum AppStoryboard: String {
 
     case test
 
 }
 
-extension StoryboardDescription: StoryboardDescribing {
+extension AppStoryboard: StoryboardDescribing {
 
     var name: String {
         return rawValue.capitalized
@@ -30,7 +30,7 @@ extension StoryboardDescription: StoryboardDescribing {
 class StoryboardResourceTests: XCTestCase {
 
     func testStoryboardResource() {
-        XCTAssertNotNil(Resource.of(StoryboardDescription.test).instantiateInitialViewController())
+        XCTAssertNotNil(Resource.of(AppStoryboard.test).instantiateInitialViewController())
     }
     
 }

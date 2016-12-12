@@ -9,13 +9,13 @@
 import XCTest
 @testable import Resource
 
-enum LocalizedUserNotificationStringDescription {
+enum AppLocalizedUserNotificationString {
 
     case test(argument: String?)
 
 }
 
-extension LocalizedUserNotificationStringDescription: LocalizedStringDescribing {
+extension AppLocalizedUserNotificationString: LocalizedStringDescribing {
 
     var key: String {
         switch self {
@@ -36,8 +36,8 @@ extension LocalizedUserNotificationStringDescription: LocalizedStringDescribing 
 class LocalizedUserNotificationStringResourceTests: XCTestCase {
 
     func testLocalizedUserNotificationStringResource() {
-        XCTAssertEqual(Resource.of(LocalizedStringDescription.test(argument: "A")), "With Argument A")
-        XCTAssertEqual(Resource.of(LocalizedStringDescription.test(argument: nil)), "No Argument")
+        XCTAssertEqual(Resource.of(AppLocalizedString.test(argument: "A")), "With Argument A")
+        XCTAssertEqual(Resource.of(AppLocalizedString.test(argument: nil)), "No Argument")
     }
     
 }

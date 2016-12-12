@@ -40,24 +40,28 @@ pod 'Resource', '~> 0.1'
 
 Define a custom enum that conforms to protocols with `Describing` postfix (list of available protocols can be found [here](#available-protocols)). For example, to manage all alert controllers, write the following code.
 
+
 ```swift
-enum AlertControllerDescription: String, AlertControllerDescribing {
-    case databaseError
+enum Alert: AlertControllerDescribing {
+    case databaseError, networkError
     var title: String {
         return rawValue.capitalized
     }
-
     var message: String {
         switch self {
         case .databaseError: return "Please try again."
+        case .networkError: return "Please check your network connection."
         }
+    }
+    var actions: [UIAlertAction] {
+        return [UIAlertAction(title: "OK", style: .default)]
     }
 }
 ```
 
 ```swift
-let alertController = Resource.of(AlertControllerDescription.databaseError)
-present(alertController, animated: true)
+let alert = Resource.of(Alert.databaseError)
+present(alert, animated: true)
 ```
 
 ## Reference

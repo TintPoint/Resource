@@ -9,13 +9,13 @@
 import XCTest
 @testable import Resource
 
-enum AlertActionDescription: String {
+enum AppAlertAction: String {
 
     case test
 
 }
 
-extension AlertActionDescription: AlertActionDescribing {
+extension AppAlertAction: AlertActionDescribing {
 
     var title: String {
         return rawValue.capitalized
@@ -34,7 +34,7 @@ extension AlertActionDescription: AlertActionDescribing {
 class AlertActionResourceTests: XCTestCase {
 
     func testAlertActionResource() {
-        let action = Resource.of(AlertActionDescription.test)
+        let action = Resource.of(AppAlertAction.test)
         XCTAssertEqual(action.title, "Test")
         XCTAssertEqual(action.style, .default)
     }

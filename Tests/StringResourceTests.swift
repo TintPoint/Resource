@@ -9,13 +9,13 @@
 import XCTest
 @testable import Resource
 
-enum StringDescription: String {
+enum AppString: String {
 
     case test
 
 }
 
-extension StringDescription: StringDescribing {
+extension AppString: StringDescribing {
 
     var content: String {
         return rawValue
@@ -26,7 +26,7 @@ extension StringDescription: StringDescribing {
 class StringResourceTests: XCTestCase {
 
     func testStringResource() {
-        XCTAssertEqual(Resource.of(StringDescription.test), StringDescription.test.rawValue)
+        XCTAssertEqual(Resource.of(AppString.test), AppString.test.rawValue)
     }
 
 }
