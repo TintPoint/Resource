@@ -15,7 +15,7 @@ public protocol AlertActionDescribing {
     /// The `UIAlertActionStyle` that will be used to represent the style of the alert action.
     var style: UIAlertActionStyle { get }
 
-    var handler: ((UIAlertAction) -> ())? { get }
+    var handler: ((UIAlertAction) -> Void)? { get }
 
 }
 
@@ -25,7 +25,7 @@ public extension AlertActionDescribing {
         return .default
     }
 
-    var handler: ((UIAlertAction) -> ())? {
+    var handler: ((UIAlertAction) -> Void)? {
         return nil
     }
 

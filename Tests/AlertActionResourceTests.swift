@@ -25,7 +25,7 @@ extension AppAlertAction: AlertActionDescribing {
         return .default
     }
 
-    var handler: ((UIAlertAction) -> ())? {
+    var handler: ((UIAlertAction) -> Void)? {
         return { _ in }
     }
 
