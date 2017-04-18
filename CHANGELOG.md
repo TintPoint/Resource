@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.2
+
+### Added
+
+- Add `AlertActionDescribing`.
+    - Added by [Justin Jia](http://github.com/JustinJiaDev).
+- Add `LocalizedUserNotificationStringDescribing`.
+    - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.1.1
 
 ### Changed
