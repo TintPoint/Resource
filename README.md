@@ -25,7 +25,7 @@ iOS 10+ / Xcode 8+ / Swift 3+
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install Resource, add the following line to your `Cartfile`:
 
 ```ogdl
-github "TintPoint/Resource" ~> 0.2
+github "TintPoint/Resource" "swift-4.0"
 ```
 
 ### CocoaPods
@@ -33,7 +33,7 @@ github "TintPoint/Resource" ~> 0.2
 [CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Resource, add the following line to your `Podfile`:
 
 ```ruby
-pod 'Resource', '~> 0.2'
+pod 'Resource', :git => 'https://github.com/TintPoint/Resource.git', :branch => 'swift-4.0'
 ```
 
 ## Getting Started
