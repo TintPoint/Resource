@@ -1,6 +1,6 @@
 //
 //  StoryboardResourceTests.swift
-//  Resource
+//  Tests
 //
 //  Created by Justin Jia on 11/14/16.
 //  Copyright © 2016 TintPoint. MIT license.

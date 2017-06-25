@@ -1,6 +1,6 @@
 //
 //  LocalizedStringResourceTests.swift
-//  Resource
+//  Tests
 //
 //  Created by Justin Jia on 11/6/16.
 //  Copyright © 2016 TintPoint. MIT license.
