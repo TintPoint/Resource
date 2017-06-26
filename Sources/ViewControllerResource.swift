@@ -17,6 +17,13 @@ public protocol ViewControllerDescribing {
     
 }
 
+/// A protocol that describes a view controller that is represented by a `ViewControllerDescribing` protocol.
+public protocol CustomViewController {
+
+    static var representedBy: ViewControllerDescribing { get }
+
+}
+
 public extension Resource {
 
     /// Returns a `UIViewController` that is represented by the item that conforms to `ViewControllerDescribing`.
@@ -25,5 +32,13 @@ public extension Resource {
     static func of(_ describing: ViewControllerDescribing) -> UIViewController {
         return describing.storyboard.instantiateViewController(withIdentifier: describing.name)
     }
+
+    /// Returns a `CustomViewController` that is represented by its class.
+    /// - Parameter viewControllerClass: An `UIViewController` that conforms to `CustomViewController`.
+    /// - Returns: A represented `CustomViewController`.
+    static func of<T: UIViewController & CustomViewController>(_ viewControllerClass: T.Type) -> T {
+        return Resource.of(viewControllerClass.representedBy) as! T
+    }
     
 }
+

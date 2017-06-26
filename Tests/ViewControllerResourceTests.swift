@@ -27,10 +27,22 @@ extension AppViewController: ViewControllerDescribing {
 
 }
 
+class CustomAppController: UIViewController, CustomViewController {
+
+    static let representedBy: ViewControllerDescribing = AppViewController.test
+
+}
+
 class ViewControllerResourceTests: XCTestCase {
 
     func testViewControllerResource() {
-        XCTAssertEqual(Resource.of(AppViewController.test).title, "Test")
+        XCTAssertEqual(Resource.of(AppViewController.test).title, AppViewController.test.name)
+    }
+
+    func testCustomViewControllerResource() {
+        let controller = Resource.of(CustomAppController.self)
+        XCTAssert(controller as Any is CustomAppController)
+        XCTAssertEqual(controller.title, AppViewController.test.name)
     }
 
 }
