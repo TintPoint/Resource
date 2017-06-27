@@ -17,6 +17,14 @@ public protocol StoryboardDescribing {
 
 }
 
+public extension StoryboardDescribing {
+
+    var bundle: Bundle {
+        return Bundle.main
+    }
+
+}
+
 /// A struct that describes an item that can represent a storyboard.
 public struct StoryboardDescription: StoryboardDescribing {
 
@@ -25,6 +33,11 @@ public struct StoryboardDescription: StoryboardDescribing {
 
     /// The `Bundle` that will be used to represent the bundle of the storyboard.
     public let bundle: Bundle
+
+    public init(name: String, bundle: Bundle = Bundle.main) {
+        self.name = name
+        self.bundle = bundle
+    }
 
 }
 

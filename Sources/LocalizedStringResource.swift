@@ -44,6 +44,12 @@ public struct LocalizedStringDescription: LocalizedStringDescribing {
     /// The array of `Any` that will be used to represent the arguments of the localized string.
     public let arguments: [Any]?
 
+    public init(key: String, comment: String = "", arguments: [Any]? = nil) {
+        self.key = key
+        self.comment = comment
+        self.arguments = arguments
+    }
+
 }
 
 public extension Resource {

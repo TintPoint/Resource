@@ -26,6 +26,11 @@ public struct ViewControllerDescription: ViewControllerDescribing {
     /// The `UIStoryboard` that will be used to represent the storyboard of the view controller.
     public let storyboard: UIStoryboard
 
+    public init(name: String, storyboard: UIStoryboard) {
+        self.name = name
+        self.storyboard = storyboard
+    }
+
 }
 
 /// A protocol that describes a view controller that is represented by a `ViewControllerDescribing` protocol.

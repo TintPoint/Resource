@@ -36,6 +36,11 @@ public struct LocalizedUserNotificationStringDescription: LocalizedUserNotificat
     /// The array of `Any` that will be used to represent the arguments of the localized user notification string.
     public var arguments: [Any]?
 
+    public init(key: String, arguments: [Any]? = nil) {
+        self.key = key
+        self.arguments = arguments
+    }
+
 }
 
 public extension Resource {

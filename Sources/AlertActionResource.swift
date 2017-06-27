@@ -15,6 +15,7 @@ public protocol AlertActionDescribing {
     /// The `UIAlertActionStyle` that will be used to represent the style of the alert action.
     var style: UIAlertActionStyle { get }
 
+    /// The closure that will be used to represent the handler of the alert action.
     var handler: ((UIAlertAction) -> Void)? { get }
 
 }
@@ -40,7 +41,14 @@ public struct AlertActionDescription: AlertActionDescribing {
     /// The `UIAlertActionStyle` that will be used to represent the style of the alert action.
     public let style: UIAlertActionStyle
 
+    /// The closure that will be used to represent the handler of the alert action.
     public let handler: ((UIAlertAction) -> Void)?
+
+    public init(title: String, style: UIAlertActionStyle = .default, handler: ((UIAlertAction) -> Void)? = nil) {
+        self.title = title
+        self.style = style
+        self.handler = handler
+    }
 
 }
 

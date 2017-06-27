@@ -50,6 +50,13 @@ public struct AlertControllerDescription: AlertControllerDescribing {
     /// The array of `UIAlertAction` that will be used to represent the actions of the alert controller.
     public let actions: [UIAlertAction]
 
+    public init(title: String, message: String = "", style: UIAlertControllerStyle = .alert, actions: [UIAlertAction]) {
+        self.title = title
+        self.message = message
+        self.style = style
+        self.actions = actions
+    }
+
 }
 
 public extension Resource {

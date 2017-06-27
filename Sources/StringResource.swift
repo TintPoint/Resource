@@ -20,6 +20,10 @@ public struct StringDescription: StringDescribing {
     /// The `String` that will be used to represent the content of the string.
     public let content: String
 
+    public init(content: String) {
+        self.content = content
+    }
+
 }
 
 public extension Resource {
