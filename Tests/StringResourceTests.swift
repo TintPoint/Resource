@@ -18,15 +18,19 @@ enum AppString: String {
 extension AppString: StringDescribing {
 
     var content: String {
-        return rawValue
+        return "Test"
     }
 
 }
 
 class StringResourceTests: XCTestCase {
 
-    func testStringResource() {
-        XCTAssertEqual(Resource.of(AppString.test), AppString.test.rawValue)
+    func testStringProtocolResource() {
+        XCTAssertEqual(Resource.of(AppString.test), "Test")
+    }
+
+    func testStringStructResource() {
+        XCTAssertEqual(Resource.of(StringDescription(content: "Content")), "Content")
     }
 
 }

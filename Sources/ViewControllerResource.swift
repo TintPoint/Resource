@@ -17,6 +17,17 @@ public protocol ViewControllerDescribing {
     
 }
 
+/// A struct that describes an item that can represent a view controller.
+public struct ViewControllerDescription: ViewControllerDescribing {
+
+    /// The `String` that will be used to represent the name of the view controller.
+    public let name: String
+
+    /// The `UIStoryboard` that will be used to represent the storyboard of the view controller.
+    public let storyboard: UIStoryboard
+
+}
+
 /// A protocol that describes a view controller that is represented by a `ViewControllerDescribing` protocol.
 public protocol CustomViewController {
 

@@ -41,9 +41,14 @@ extension AppLocalizedString: LocalizedStringDescribing {
 
 class LocalizedStringResourceTests: XCTestCase {
 
-    func testLocalizedStringResource() {
+    func testLocalizedStringProtocolResource() {
         XCTAssertEqual(Resource.of(AppLocalizedString.test(argument: "A")), "With Argument A")
         XCTAssertEqual(Resource.of(AppLocalizedString.test(argument: nil)), "No Argument")
+    }
+
+    func testLocalizedStringStructResource() {
+        XCTAssertEqual(Resource.of(LocalizedStringDescription(key: "Key %@", comment: "Comment", arguments: ["X"])), "Key X")
+        XCTAssertEqual(Resource.of(LocalizedStringDescription(key: "Key", comment: "Comment", arguments: nil)), "Key")
     }
 
 }

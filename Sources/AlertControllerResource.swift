@@ -35,6 +35,23 @@ public extension AlertControllerDescribing {
 
 }
 
+/// A struct that describes an item that can represent an alert controller.
+public struct AlertControllerDescription: AlertControllerDescribing {
+
+    /// The `String` that will be used to represent the title of the alert controller.
+    public let title: String
+
+    /// The `String` that will be used to represent the message of the alert controller.
+    public let message: String
+
+    /// The `UIAlertControllerStyle` that will be used to represent the style of the alert controller.
+    public let style: UIAlertControllerStyle
+
+    /// The array of `UIAlertAction` that will be used to represent the actions of the alert controller.
+    public let actions: [UIAlertAction]
+
+}
+
 public extension Resource {
 
     /// Returns a `UIAlertController` that is represented by the item that conforms to `AlertControllerDescribing`.

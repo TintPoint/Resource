@@ -18,7 +18,7 @@ enum AppAlertController: String {
 extension AppAlertController: AlertControllerDescribing {
 
     var title: String {
-        return rawValue.capitalized
+        return "Test"
     }
 
     var message: String {
@@ -39,13 +39,22 @@ extension AppAlertController: AlertControllerDescribing {
 
 class AlertControllerResourceTests: XCTestCase {
 
-    func testAlertControllerResource() {
+    func testAlertControllerProtocolResource() {
         let controller = Resource.of(AppAlertController.test)
         XCTAssertEqual(controller.title, "Test")
         XCTAssertEqual(controller.message, "Test Message")
         XCTAssertEqual(controller.preferredStyle, .actionSheet)
         XCTAssertEqual(controller.actions.count, 1)
         XCTAssertEqual(controller.actions.first?.title, "TestAction")
+    }
+
+    func testAlertControllerStructResource() {
+        let controller = Resource.of(AlertControllerDescription(title: "Title", message: "Message", style: .alert, actions: [UIAlertAction(title: "Action", style: .default)]))
+        XCTAssertEqual(controller.title, "Title")
+        XCTAssertEqual(controller.message, "Message")
+        XCTAssertEqual(controller.preferredStyle, .alert)
+        XCTAssertEqual(controller.actions.count, 1)
+        XCTAssertEqual(controller.actions.first?.title, "Action")
     }
     
 }

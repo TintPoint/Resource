@@ -31,6 +31,19 @@ public extension AlertActionDescribing {
 
 }
 
+/// A struct that describes an item that can represent an alert action.
+public struct AlertActionDescription: AlertActionDescribing {
+
+    /// The `String` that will be used to represent the title of the alert action.
+    public let title: String
+
+    /// The `UIAlertActionStyle` that will be used to represent the style of the alert action.
+    public let style: UIAlertActionStyle
+
+    public let handler: ((UIAlertAction) -> Void)?
+
+}
+
 public extension Resource {
 
     /// Returns a `UIAlertAction` that is represented by the item that conforms to `AlertActionDescribing`.

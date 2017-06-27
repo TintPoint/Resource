@@ -15,11 +15,11 @@ enum AppLocalizedUserNotificationString {
 
 }
 
-extension AppLocalizedUserNotificationString: LocalizedStringDescribing {
+extension AppLocalizedUserNotificationString: LocalizedUserNotificationStringDescribing {
 
     var key: String {
         switch self {
-        case .test(let argument) where argument != nil: return "With Argument %@"
+        case .test(let argument) where argument != nil: return "With Argument"
         case .test: return "No Argument"
         }
     }
@@ -35,9 +35,14 @@ extension AppLocalizedUserNotificationString: LocalizedStringDescribing {
 
 class LocalizedUserNotificationStringResourceTests: XCTestCase {
 
-    func testLocalizedUserNotificationStringResource() {
-        XCTAssertEqual(Resource.of(AppLocalizedString.test(argument: "A")), "With Argument A")
-        XCTAssertEqual(Resource.of(AppLocalizedString.test(argument: nil)), "No Argument")
+    func testLocalizedUserNotificationStringProtocolResource() {
+        XCTAssertEqual(Resource.of(AppLocalizedUserNotificationString.test(argument: "A")), "With Argument")
+        XCTAssertEqual(Resource.of(AppLocalizedUserNotificationString.test(argument: nil)), "No Argument")
+    }
+
+    func testLocalizedUserNotificationStringStructResource() {
+        XCTAssertEqual(Resource.of(LocalizedUserNotificationStringDescription(key: "Key", arguments: ["X"])), "Key")
+        XCTAssertEqual(Resource.of(LocalizedUserNotificationStringDescription(key: "Key", arguments: nil)), "Key")
     }
     
 }

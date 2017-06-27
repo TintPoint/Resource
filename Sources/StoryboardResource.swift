@@ -17,6 +17,17 @@ public protocol StoryboardDescribing {
 
 }
 
+/// A struct that describes an item that can represent a storyboard.
+public struct StoryboardDescription: StoryboardDescribing {
+
+    /// The `String` that will be used to represent the name of the storyboard.
+    public let name: String
+
+    /// The `Bundle` that will be used to represent the bundle of the storyboard.
+    public let bundle: Bundle
+
+}
+
 public extension Resource {
 
     /// Returns a `UIStoryboard` that is represented by the item that conforms to `StoryboardDescribing`.

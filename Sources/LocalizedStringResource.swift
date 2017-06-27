@@ -32,6 +32,20 @@ public extension LocalizedStringDescribing {
 
 }
 
+/// A struct that describes an item that can represent a localized string.
+public struct LocalizedStringDescription: LocalizedStringDescribing {
+
+    /// The `String` that will be used to represent the key of the localized string.
+    public let key: String
+
+    /// The `String` that will be used to represent the comment of the localized string.
+    public let comment: String
+
+    /// The array of `Any` that will be used to represent the arguments of the localized string.
+    public let arguments: [Any]?
+
+}
+
 public extension Resource {
 
     /// Returns a `String` that is represented by the item that conforms to `LocalizedStringDescribing`.

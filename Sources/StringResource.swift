@@ -14,6 +14,14 @@ public protocol StringDescribing {
 
 }
 
+/// A struct that describes an item that can represent a string.
+public struct StringDescription: StringDescribing {
+
+    /// The `String` that will be used to represent the content of the string.
+    public let content: String
+
+}
+
 public extension Resource {
 
     /// Returns a `String` that is represented by the item that conforms to `StringDescribing`.

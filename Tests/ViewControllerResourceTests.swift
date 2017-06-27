@@ -18,7 +18,7 @@ enum AppViewController: String {
 extension AppViewController: ViewControllerDescribing {
 
     var name: String {
-        return rawValue.capitalized
+        return "Test"
     }
 
     var storyboard: UIStoryboard {
@@ -35,14 +35,18 @@ class CustomAppController: UIViewController, CustomViewController {
 
 class ViewControllerResourceTests: XCTestCase {
 
-    func testViewControllerResource() {
-        XCTAssertEqual(Resource.of(AppViewController.test).title, AppViewController.test.name)
+    func testViewControllerProtocolResource() {
+        XCTAssertEqual(Resource.of(AppViewController.test).title, "Test")
     }
 
-    func testCustomViewControllerResource() {
+    func testViewControllerStructResource() {
+        XCTAssertEqual(Resource.of(ViewControllerDescription(name: "Test", storyboard: Resource.of(AppStoryboard.test))).title, "Test")
+    }
+
+    func testViewControllerCustomResource() {
         let controller = Resource.of(CustomAppController.self)
         XCTAssert(controller as Any is CustomAppController)
-        XCTAssertEqual(controller.title, AppViewController.test.name)
+        XCTAssertEqual(controller.title, "Test")
     }
 
 }
