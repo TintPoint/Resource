@@ -51,5 +51,5 @@ public extension Resource {
     static func of(_ describing: LocalizedUserNotificationStringDescribing) -> String {
         return String.localizedUserNotificationString(forKey: describing.key, arguments: describing.arguments)
     }
-    
+
 }

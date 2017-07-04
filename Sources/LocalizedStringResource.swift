@@ -59,8 +59,10 @@ public extension Resource {
     /// - Returns: A represented localized string.
     static func of(_ describing: LocalizedStringDescribing) -> String {
         let localizedString = NSLocalizedString(describing.key, comment: describing.comment)
-        guard let arguments = describing.arguments as? [CVarArg] else { return localizedString }
+        guard let arguments = describing.arguments as? [CVarArg] else {
+            return localizedString
+        }
         return String(format: localizedString, arguments: arguments)
     }
-    
+
 }

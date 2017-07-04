@@ -14,7 +14,7 @@ public protocol ViewControllerDescribing {
 
     /// The `UIStoryboard` that will be used to represent the storyboard of the view controller.
     var storyboard: UIStoryboard { get }
-    
+
 }
 
 /// A struct that describes an item that can represent a view controller.
@@ -55,6 +55,5 @@ public extension Resource {
     static func of<T: UIViewController & CustomViewController>(_ viewControllerClass: T.Type) -> T {
         return Resource.of(viewControllerClass.representedBy) as! T
     }
-    
-}
 
+}

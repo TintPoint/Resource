@@ -56,5 +56,5 @@ class AlertControllerResourceTests: XCTestCase {
         XCTAssertEqual(controller.actions.count, 1)
         XCTAssertEqual(controller.actions.first?.title, "Action")
     }
-    
+
 }

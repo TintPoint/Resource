@@ -34,5 +34,5 @@ public extension Resource {
     static func of(_ describing: StringDescribing) -> String {
         return describing.content
     }
-    
+
 }

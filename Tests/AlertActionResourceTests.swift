@@ -44,5 +44,5 @@ class AlertActionResourceTests: XCTestCase {
         XCTAssertEqual(action.title, "Title")
         XCTAssertEqual(action.style, .cancel)
     }
-    
+
 }

@@ -69,5 +69,5 @@ public extension Resource {
         describing.actions.forEach { controller.addAction($0) }
         return controller
     }
-    
+
 }

@@ -36,5 +36,5 @@ class StoryboardResourceTests: XCTestCase {
     func testStoryboardStructResource() {
         XCTAssertNotNil(Resource.of(StoryboardDescription(name: "Test", bundle: Bundle(for: StoryboardResourceTests.self))).instantiateInitialViewController())
     }
-    
+
 }

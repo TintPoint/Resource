@@ -60,5 +60,5 @@ public extension Resource {
     static func of(_ describing: AlertActionDescribing) -> UIAlertAction {
         return UIAlertAction(title: describing.title, style: describing.style, handler: describing.handler)
     }
-    
+
 }

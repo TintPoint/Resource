@@ -44,5 +44,5 @@ class LocalizedUserNotificationStringResourceTests: XCTestCase {
         XCTAssertEqual(Resource.of(LocalizedUserNotificationStringDescription(key: "Key", arguments: ["X"])), "Key")
         XCTAssertEqual(Resource.of(LocalizedUserNotificationStringDescription(key: "Key", arguments: nil)), "Key")
     }
-    
+
 }
