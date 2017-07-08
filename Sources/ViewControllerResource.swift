@@ -48,7 +48,7 @@ public protocol DataReceivingController: CustomViewController {
     associatedtype TransferData
 
     /// The `TransferData` that stores the data transferred to the view controller.
-    var transferData: TransferData! { get set }
+    var transferData: TransferData { get set }
 
 }
 
