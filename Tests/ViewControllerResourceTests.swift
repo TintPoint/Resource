@@ -11,14 +11,17 @@ import XCTest
 
 enum AppViewController: String {
 
-    case test
+    case test, data
 
 }
 
 extension AppViewController: ViewControllerDescribing {
 
     var name: String {
-        return "Test"
+        switch self {
+        case .test: return "Test"
+        case .data: return "Data"
+        }
     }
 
     var storyboard: UIStoryboard {
@@ -30,6 +33,13 @@ extension AppViewController: ViewControllerDescribing {
 class CustomAppController: UIViewController, CustomViewController {
 
     static let representedBy: ViewControllerDescribing = AppViewController.test
+
+}
+
+class DataReceivingAppController: UIViewController, DataReceivingController {
+
+    static let representedBy: ViewControllerDescribing = AppViewController.data
+    var transferData: (String, Int)?
 
 }
 
@@ -47,6 +57,15 @@ class ViewControllerResourceTests: XCTestCase {
         let controller = Resource.of(CustomAppController.self)
         XCTAssert(controller as Any is CustomAppController)
         XCTAssertEqual(controller.title, "Test")
+    }
+
+    func testViewControllerTransferResource() {
+        let data = ("Text", 10)
+        let controller = Resource.of(DataReceivingAppController.self, passing: data)
+        XCTAssert(controller as Any is DataReceivingAppController)
+        XCTAssertEqual(controller.title, "Data")
+        XCTAssertEqual(controller.transferData?.0, data.0)
+        XCTAssertEqual(controller.transferData?.1, data.1)
     }
 
 }
