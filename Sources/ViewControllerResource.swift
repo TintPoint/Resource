@@ -9,10 +9,10 @@
 /// A protocol that describes an item that can represent a view controller.
 public protocol ViewControllerDescribing {
 
-    /// The `String` that will be used to represent the name of the view controller.
+    /// The `String` that represents the name of the view controller.
     var name: String { get }
 
-    /// The `UIStoryboard` that will be used to represent the storyboard of the view controller.
+    /// The `UIStoryboard` that represents the storyboard of the view controller.
     var storyboard: UIStoryboard { get }
 
 }
@@ -20,10 +20,10 @@ public protocol ViewControllerDescribing {
 /// A struct that describes an item that can represent a view controller.
 public struct ViewControllerDescription: ViewControllerDescribing {
 
-    /// The `String` that will be used to represent the name of the view controller.
+    /// The `String` that represents the name of the view controller.
     public let name: String
 
-    /// The `UIStoryboard` that will be used to represent the storyboard of the view controller.
+    /// The `UIStoryboard` that represents the storyboard of the view controller.
     public let storyboard: UIStoryboard
 
     public init(name: String, storyboard: UIStoryboard) {
@@ -36,7 +36,7 @@ public struct ViewControllerDescription: ViewControllerDescribing {
 /// A protocol that describes a view controller that is represented by a `ViewControllerDescribing`.
 public protocol CustomViewController: AnyObject {
 
-    /// The `ViewControllerDescribing` that will be used to represent the view controller.
+    /// The `ViewControllerDescribing` that represents the view controller.
     static var representedBy: ViewControllerDescribing { get }
 
 }
@@ -47,9 +47,8 @@ public protocol DataReceivingController: CustomViewController {
     /// An associated type that describes the type of the data that the view controller accepts.
     associatedtype TransferData
 
-    /// Stores the data transferred to the view controller.
-    /// - Parameter data: A `TransferData` that represents the data transferred.
-    func receiveData(_ data: TransferData)
+    /// The `TransferData` that stores the data transferred to the view controller.
+    var transferData: TransferData! { get set }
 
 }
 
@@ -75,7 +74,7 @@ public extension Resource {
     /// - Returns: A represented `DataReceivingController`.
     static func of<T: UIViewController & DataReceivingController>(_ viewControllerClass: T.Type, passing data: T.TransferData) -> T {
         let controller = Resource.of(viewControllerClass.self)
-        controller.receiveData(data)
+        controller.transferData = data
         return controller
     }
 

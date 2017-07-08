@@ -9,16 +9,16 @@
 /// A protocol that describes an item that can represent an alert controller.
 public protocol AlertControllerDescribing {
 
-    /// The `String` that will be used to represent the title of the alert controller.
+    /// The `String` that represents the title of the alert controller.
     var title: String { get }
 
-    /// The `String` that will be used to represent the message of the alert controller.
+    /// The `String` that represents the message of the alert controller.
     var message: String { get }
 
-    /// The `UIAlertControllerStyle` that will be used to represent the style of the alert controller.
+    /// The `UIAlertControllerStyle` that represents the style of the alert controller.
     var style: UIAlertControllerStyle { get }
 
-    /// The array of `UIAlertAction` that will be used to represent the actions of the alert controller.
+    /// The array of `UIAlertAction` that represents the actions of the alert controller.
     var actions: [UIAlertAction] { get }
 
 }
@@ -38,16 +38,16 @@ public extension AlertControllerDescribing {
 /// A struct that describes an item that can represent an alert controller.
 public struct AlertControllerDescription: AlertControllerDescribing {
 
-    /// The `String` that will be used to represent the title of the alert controller.
+    /// The `String` that represents the title of the alert controller.
     public let title: String
 
-    /// The `String` that will be used to represent the message of the alert controller.
+    /// The `String` that represents the message of the alert controller.
     public let message: String
 
-    /// The `UIAlertControllerStyle` that will be used to represent the style of the alert controller.
+    /// The `UIAlertControllerStyle` that represents the style of the alert controller.
     public let style: UIAlertControllerStyle
 
-    /// The array of `UIAlertAction` that will be used to represent the actions of the alert controller.
+    /// The array of `UIAlertAction` that represents the actions of the alert controller.
     public let actions: [UIAlertAction]
 
     public init(title: String, message: String = "", style: UIAlertControllerStyle = .alert, actions: [UIAlertAction]) {

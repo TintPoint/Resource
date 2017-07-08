@@ -9,13 +9,13 @@
 /// A protocol that describes an item that can represent a localized string.
 public protocol LocalizedStringDescribing {
 
-    /// The `String` that will be used to represent the key of the localized string.
+    /// The `String` that represents the key of the localized string.
     var key: String { get }
 
-    /// The `String` that will be used to represent the comment of the localized string.
+    /// The `String` that represents the comment of the localized string.
     var comment: String { get }
 
-    /// The array of `Any` that will be used to represent the arguments of the localized string.
+    /// The array of `Any` that represents the arguments of the localized string.
     var arguments: [Any]? { get }
 
 }
@@ -35,13 +35,13 @@ public extension LocalizedStringDescribing {
 /// A struct that describes an item that can represent a localized string.
 public struct LocalizedStringDescription: LocalizedStringDescribing {
 
-    /// The `String` that will be used to represent the key of the localized string.
+    /// The `String` that represents the key of the localized string.
     public let key: String
 
-    /// The `String` that will be used to represent the comment of the localized string.
+    /// The `String` that represents the comment of the localized string.
     public let comment: String
 
-    /// The array of `Any` that will be used to represent the arguments of the localized string.
+    /// The array of `Any` that represents the arguments of the localized string.
     public let arguments: [Any]?
 
     public init(key: String, comment: String = "", arguments: [Any]? = nil) {

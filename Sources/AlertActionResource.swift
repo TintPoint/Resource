@@ -9,13 +9,13 @@
 /// A protocol that describes an item that can represent an alert action.
 public protocol AlertActionDescribing {
 
-    /// The `String` that will be used to represent the title of the alert action.
+    /// The `String` that represents the title of the alert action.
     var title: String { get }
 
-    /// The `UIAlertActionStyle` that will be used to represent the style of the alert action.
+    /// The `UIAlertActionStyle` that represents the style of the alert action.
     var style: UIAlertActionStyle { get }
 
-    /// The closure that will be used to represent the handler of the alert action.
+    /// The closure that represents the handler of the alert action.
     var handler: ((UIAlertAction) -> Void)? { get }
 
 }
@@ -35,13 +35,13 @@ public extension AlertActionDescribing {
 /// A struct that describes an item that can represent an alert action.
 public struct AlertActionDescription: AlertActionDescribing {
 
-    /// The `String` that will be used to represent the title of the alert action.
+    /// The `String` that represents the title of the alert action.
     public let title: String
 
-    /// The `UIAlertActionStyle` that will be used to represent the style of the alert action.
+    /// The `UIAlertActionStyle` that represents the style of the alert action.
     public let style: UIAlertActionStyle
 
-    /// The closure that will be used to represent the handler of the alert action.
+    /// The closure that represents the handler of the alert action.
     public let handler: ((UIAlertAction) -> Void)?
 
     public init(title: String, style: UIAlertActionStyle = .default, handler: ((UIAlertAction) -> Void)? = nil) {

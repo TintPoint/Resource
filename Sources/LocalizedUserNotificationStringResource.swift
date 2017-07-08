@@ -11,10 +11,10 @@ import UserNotifications
 /// A protocol that describes an item that can represent a localized user notification string.
 public protocol LocalizedUserNotificationStringDescribing {
 
-    /// The `String` that will be used to represent the key of the localized user notification string.
+    /// The `String` that represents the key of the localized user notification string.
     var key: String { get }
 
-    /// The array of `Any` that will be used to represent the arguments of the localized user notification string.
+    /// The array of `Any` that represents the arguments of the localized user notification string.
     var arguments: [Any]? { get }
 
 }
@@ -30,10 +30,10 @@ public extension LocalizedUserNotificationStringDescribing {
 /// A struct that describes an item that can represent a localized user notification string.
 public struct LocalizedUserNotificationStringDescription: LocalizedUserNotificationStringDescribing {
 
-    /// The `String` that will be used to represent the key of the localized user notification string.
+    /// The `String` that represents the key of the localized user notification string.
     public let key: String
 
-    /// The array of `Any` that will be used to represent the arguments of the localized user notification string.
+    /// The array of `Any` that represents the arguments of the localized user notification string.
     public var arguments: [Any]?
 
     public init(key: String, arguments: [Any]? = nil) {

@@ -9,10 +9,10 @@
 /// A protocol that describes an item that can represent a storyboard.
 public protocol StoryboardDescribing {
 
-    /// The `String` that will be used to represent the name of the storyboard.
+    /// The `String` that represents the name of the storyboard.
     var name: String { get }
 
-    /// The `Bundle` that will be used to represent the bundle of the storyboard.
+    /// The `Bundle` that represents the bundle of the storyboard.
     var bundle: Bundle { get }
 
 }
@@ -28,10 +28,10 @@ public extension StoryboardDescribing {
 /// A struct that describes an item that can represent a storyboard.
 public struct StoryboardDescription: StoryboardDescribing {
 
-    /// The `String` that will be used to represent the name of the storyboard.
+    /// The `String` that represents the name of the storyboard.
     public let name: String
 
-    /// The `Bundle` that will be used to represent the bundle of the storyboard.
+    /// The `Bundle` that represents the bundle of the storyboard.
     public let bundle: Bundle
 
     public init(name: String, bundle: Bundle = Bundle.main) {
