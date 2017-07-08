@@ -33,10 +33,23 @@ public struct ViewControllerDescription: ViewControllerDescribing {
 
 }
 
-/// A protocol that describes a view controller that is represented by a `ViewControllerDescribing` protocol.
-public protocol CustomViewController {
+/// A protocol that describes a view controller that is represented by a `ViewControllerDescribing`.
+public protocol CustomViewController: AnyObject {
 
+    /// The `ViewControllerDescribing` that will be used to represent the view controller.
     static var representedBy: ViewControllerDescribing { get }
+
+}
+
+/// A protocol that describes a view controller that can receive some data during initialization.
+public protocol DataReceivingController: CustomViewController {
+
+    /// An associated type that describes the type of the data that the view controller accepts.
+    associatedtype TransferData
+
+    /// Stores the data transferred to the view controller.
+    /// - Parameter data: A `TransferData` that represents the data transferred.
+    func receiveData(_ data: TransferData)
 
 }
 
@@ -54,6 +67,16 @@ public extension Resource {
     /// - Returns: A represented `CustomViewController`.
     static func of<T: UIViewController & CustomViewController>(_ viewControllerClass: T.Type) -> T {
         return Resource.of(viewControllerClass.representedBy) as! T
+    }
+
+    /// Returns a `DataReceivingController` that is represented by its class.
+    /// - Parameter viewControllerClass: An `UIViewController` that conforms to `DataReceivingController`.
+    /// - Parameter data: A `TransferData` that the view controller accepts.
+    /// - Returns: A represented `DataReceivingController`.
+    static func of<T: UIViewController & DataReceivingController>(_ viewControllerClass: T.Type, passing data: T.TransferData) -> T {
+        let controller = Resource.of(viewControllerClass.self)
+        controller.receiveData(data)
+        return controller
     }
 
 }
