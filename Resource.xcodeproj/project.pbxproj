@@ -180,6 +180,7 @@
 				D0B059AE1D65902E009C84FC /* Sources */,
 				D0B059AF1D65902E009C84FC /* Frameworks */,
 				D0B059B01D65902E009C84FC /* Resources */,
+				D020EAFF1F108D03005D4AF9 /* Run Linter */,
 			);
 			buildRules = (
 			);
@@ -199,6 +200,7 @@
 				D0B172961D45A1EB0079A2F2 /* Frameworks */,
 				D0B172971D45A1EB0079A2F2 /* Headers */,
 				D0B172981D45A1EB0079A2F2 /* Resources */,
+				D020EAFE1F108C20005D4AF9 /* Run Linter */,
 			);
 			buildRules = (
 			);
@@ -266,6 +268,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D020EAFE1F108C20005D4AF9 /* Run Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Linter";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint is not installed\"\nfi";
+		};
+		D020EAFF1F108D03005D4AF9 /* Run Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Linter";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint is not installed\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0B059AE1D65902E009C84FC /* Sources */ = {
