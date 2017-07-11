@@ -64,8 +64,8 @@ class ViewControllerResourceTests: XCTestCase {
         let controller = Resource.of(DataReceivingAppController.self, passing: data)
         XCTAssert(controller as Any is DataReceivingAppController)
         XCTAssertEqual(controller.title, "Data")
-        XCTAssertEqual(controller.transferData?.0, data.0)
-        XCTAssertEqual(controller.transferData?.1, data.1)
+        XCTAssertEqual(controller.controllerData?.0, data.0)
+        XCTAssertEqual(controller.controllerData?.1, data.1)
     }
 
 }
