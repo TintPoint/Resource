@@ -9,7 +9,7 @@
 import XCTest
 @testable import Resource
 
-enum AppAlertController: String {
+enum AppAlertController {
 
     case test
 

@@ -9,7 +9,7 @@
 import XCTest
 @testable import Resource
 
-enum AppStoryboard: String {
+enum AppStoryboard {
 
     case test
 

@@ -9,7 +9,7 @@
 import XCTest
 @testable import Resource
 
-enum AppViewController: String {
+enum AppViewController {
 
     case test, data
 
