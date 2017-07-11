@@ -38,14 +38,16 @@ pod 'Resource', :git => 'https://github.com/TintPoint/Resource.git', :branch => 
 
 ## Getting Started
 
-Define a custom enum that conforms to protocols with `Describing` postfix (list of available protocols can be found [here](#available-protocols)). For example, to manage all alert controllers, write the following code.
-
+Define a custom enum that conforms to protocols with `Describing` postfix (list of available protocols can be found [here](#available-protocols)). For example, to manage alert controllers, write the following code.
 
 ```swift
 enum Alert: AlertControllerDescribing {
     case databaseError, networkError
     var title: String {
-        return rawValue.capitalized
+        switch self {
+        case .databaseError: return "Database Error"
+        case .networkError: return "Network Error"
+        }
     }
     var message: String {
         switch self {
@@ -64,6 +66,36 @@ let alert = Resource.of(Alert.databaseError)
 present(alert, animated: true)
 ```
 
+### Generic Version for View Controllers
+
+Define a `UIViewController` subclass that conforms to `CustomViewController` protocol.
+
+```swift
+class AppController: UIViewController, CustomViewController {
+    static let representedBy: ViewControllerDescribing = ViewControllerDescription(name: "Main", storyboard: UIStoryboard(name: "Main", bundle: Bundle.main))
+}
+```
+
+```swift
+let controller = Resource.of(AppController.self)
+print(type(of: controller)) // AppController
+```
+
+Type-safe dependency injection is also supported.
+
+```swift
+class AppController: UIViewController, DataReceivingController {
+    static let representedBy: ViewControllerDescribing = ViewControllerDescription(name: "Main", storyboard: UIStoryboard(name: "Main", bundle: Bundle.main))
+    var controllerData: (text: String, number: Int)?
+}
+```
+
+```swift
+let controller = Resource.of(AppController.self, passing: (text: "Text", number: 10))
+print(controller.controllerData?.text) // "Text"
+print(controller.controllerData?.number) // 10
+```
+
 ## Reference
 
 ### Available Protocols
@@ -75,3 +107,16 @@ present(alert, animated: true)
 > - StoryboardDescribing
 > - StringDescribing
 > - ViewControllerDescribing
+
+> - CustomViewController
+> - DataReceivingController
+
+### Available Structs
+
+> - AlertActionDescription
+> - AlertControllerDescription
+> - LocalizedStringDescription
+> - LocalizedUserNotificationStringDescription
+> - StoryboardDescription
+> - StringDescription
+> - ViewControllerDescription
