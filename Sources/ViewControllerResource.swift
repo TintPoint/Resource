@@ -45,10 +45,10 @@ public protocol CustomViewController: AnyObject {
 public protocol DataReceivingController: CustomViewController {
 
     /// An associated type that describes the type of the data that the view controller accepts.
-    associatedtype TransferData
+    associatedtype ControllerData
 
-    /// The `TransferData` that stores the data transferred to the view controller.
-    var transferData: TransferData { get set }
+    /// The `ControllerData` that stores the data transferred to the view controller.
+    var controllerData: ControllerData { get set }
 
 }
 
@@ -70,11 +70,11 @@ public extension Resource {
 
     /// Returns a `DataReceivingController` that is represented by its class.
     /// - Parameter viewControllerClass: An `UIViewController` that conforms to `DataReceivingController`.
-    /// - Parameter data: A `TransferData` that the view controller accepts.
+    /// - Parameter data: A `ControllerData` that the view controller accepts.
     /// - Returns: A represented `DataReceivingController`.
-    static func of<T: UIViewController & DataReceivingController>(_ viewControllerClass: T.Type, passing data: T.TransferData) -> T {
+    static func of<T: UIViewController & DataReceivingController>(_ viewControllerClass: T.Type, passing data: T.ControllerData) -> T {
         let controller = Resource.of(viewControllerClass.self)
-        controller.transferData = data
+        controller.controllerData = data
         return controller
     }
 
