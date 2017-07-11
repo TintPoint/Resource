@@ -39,7 +39,7 @@ class CustomAppController: UIViewController, CustomViewController {
 class DataReceivingAppController: UIViewController, DataReceivingController {
 
     static let representedBy: ViewControllerDescribing = AppViewController.data
-    var transferData: (String, Int)?
+    var controllerData: (String, Int)?
 
 }
 
