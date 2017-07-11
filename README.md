@@ -108,9 +108,6 @@ print(controller.controllerData?.number) // 10
 > - StringDescribing
 > - ViewControllerDescribing
 
-> - CustomViewController
-> - DataReceivingController
-
 ### Available Structs
 
 > - AlertActionDescription
