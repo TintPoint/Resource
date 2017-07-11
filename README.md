@@ -66,7 +66,7 @@ let alert = Resource.of(Alert.databaseError)
 present(alert, animated: true)
 ```
 
-### Generic Version for View Controllers
+### Generic Methods for View Controllers
 
 Define a `UIViewController` subclass that conforms to `CustomViewController` protocol.
 
