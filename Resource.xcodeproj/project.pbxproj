@@ -80,15 +80,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D094FFDD1F14847C00E602A9 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				D0B172AF1D45A2220079A2F2 /* Resource.h */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		D094FFDE1F14848700E602A9 /* Resource */ = {
+		D094FFDE1F14848700E602A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				D00D1D441DD00A25001B4866 /* Resource.swift */,
@@ -100,10 +92,10 @@
 				D00D1D471DD00B10001B4866 /* StringResource.swift */,
 				D05E13371DDA830D004E935D /* ViewControllerResource.swift */,
 			);
-			path = Resource;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		D094FFDF1F1484BB00E602A9 /* ResourceTests */ = {
+		D094FFDF1F1484BB00E602A9 /* ResourcesTests */ = {
 			isa = PBXGroup;
 			children = (
 				D084B6CA1DF67BF8002ED90B /* AlertActionResourceTests.swift */,
@@ -114,7 +106,7 @@
 				D00D1D491DD00C35001B4866 /* StringResourceTests.swift */,
 				D05E13391DDA8396004E935D /* ViewControllerResourceTests.swift */,
 			);
-			path = ResourceTests;
+			path = ResourcesTests;
 			sourceTree = "<group>";
 		};
 		D094FFE01F1484D400E602A9 /* Resources */ = {
@@ -125,28 +117,29 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		D094FFE31F14855600E602A9 /* Info */ = {
+		D094FFE31F14855600E602A9 /* Supports */ = {
 			isa = PBXGroup;
 			children = (
 				D094FFE41F14856E00E602A9 /* Info.plist */,
 			);
-			path = Info;
+			path = Supports;
 			sourceTree = "<group>";
 		};
-		D094FFE51F14859F00E602A9 /* Info */ = {
+		D094FFE51F14859F00E602A9 /* Supports */ = {
 			isa = PBXGroup;
 			children = (
 				D094FFE71F14868B00E602A9 /* Info.plist */,
+				D0B172AF1D45A2220079A2F2 /* Resource.h */,
 			);
-			path = Info;
+			path = Supports;
 			sourceTree = "<group>";
 		};
 		D0B059B31D65902E009C84FC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D094FFDF1F1484BB00E602A9 /* ResourceTests */,
+				D094FFDF1F1484BB00E602A9 /* ResourcesTests */,
 				D094FFE01F1484D400E602A9 /* Resources */,
-				D094FFE31F14855600E602A9 /* Info */,
+				D094FFE31F14855600E602A9 /* Supports */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -172,9 +165,8 @@
 		D0B1729C1D45A1EB0079A2F2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D094FFDD1F14847C00E602A9 /* Header */,
-				D094FFDE1F14848700E602A9 /* Resource */,
-				D094FFE51F14859F00E602A9 /* Info */,
+				D094FFDE1F14848700E602A9 /* Resources */,
+				D094FFE51F14859F00E602A9 /* Supports */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -364,7 +356,7 @@
 		D0B059BB1D65902E009C84FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Tests/Info/Info.plist;
+				INFOPLIST_FILE = Tests/Supports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.ResourceTests;
@@ -375,7 +367,7 @@
 		D0B059BC1D65902E009C84FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Tests/Info/Info.plist;
+				INFOPLIST_FILE = Tests/Supports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.ResourceTests;
@@ -483,7 +475,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info/Info.plist;
+				INFOPLIST_FILE = Sources/Supports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.Resource;
@@ -499,7 +491,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info/Info.plist;
+				INFOPLIST_FILE = Sources/Supports/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tintpoint.Resource;
