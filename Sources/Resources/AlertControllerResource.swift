@@ -10,10 +10,10 @@
 public protocol AlertControllerDescribing {
 
     /// The `String` that represents the title of the alert controller.
-    var title: String { get }
+    var title: String? { get }
 
     /// The `String` that represents the message of the alert controller.
-    var message: String { get }
+    var message: String? { get }
 
     /// The `UIAlertControllerStyle` that represents the style of the alert controller.
     var style: UIAlertControllerStyle { get }
@@ -25,8 +25,12 @@ public protocol AlertControllerDescribing {
 
 public extension AlertControllerDescribing {
 
-    var message: String {
-        return ""
+    var title: String? {
+        return nil
+    }
+
+    var message: String? {
+        return nil
     }
 
     var style: UIAlertControllerStyle {
@@ -39,10 +43,10 @@ public extension AlertControllerDescribing {
 public struct AlertControllerDescription: AlertControllerDescribing {
 
     /// The `String` that represents the title of the alert controller.
-    public let title: String
+    public let title: String?
 
     /// The `String` that represents the message of the alert controller.
-    public let message: String
+    public let message: String?
 
     /// The `UIAlertControllerStyle` that represents the style of the alert controller.
     public let style: UIAlertControllerStyle
@@ -50,7 +54,7 @@ public struct AlertControllerDescription: AlertControllerDescribing {
     /// The array of `UIAlertAction` that represents the actions of the alert controller.
     public let actions: [UIAlertAction]
 
-    public init(title: String, message: String = "", style: UIAlertControllerStyle = .alert, actions: [UIAlertAction]) {
+    public init(title: String? = nil, message: String? = nil, style: UIAlertControllerStyle = .alert, actions: [UIAlertAction]) {
         self.title = title
         self.message = message
         self.style = style

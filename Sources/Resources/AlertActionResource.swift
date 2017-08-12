@@ -10,7 +10,7 @@
 public protocol AlertActionDescribing {
 
     /// The `String` that represents the title of the alert action.
-    var title: String { get }
+    var title: String? { get }
 
     /// The `UIAlertActionStyle` that represents the style of the alert action.
     var style: UIAlertActionStyle { get }
@@ -21,6 +21,10 @@ public protocol AlertActionDescribing {
 }
 
 public extension AlertActionDescribing {
+
+    var title: String? {
+        return nil
+    }
 
     var style: UIAlertActionStyle {
         return .default
@@ -36,7 +40,7 @@ public extension AlertActionDescribing {
 public struct AlertActionDescription: AlertActionDescribing {
 
     /// The `String` that represents the title of the alert action.
-    public let title: String
+    public let title: String?
 
     /// The `UIAlertActionStyle` that represents the style of the alert action.
     public let style: UIAlertActionStyle
@@ -44,7 +48,7 @@ public struct AlertActionDescription: AlertActionDescribing {
     /// The closure that represents the handler of the alert action.
     public let handler: ((UIAlertAction) -> Void)?
 
-    public init(title: String, style: UIAlertActionStyle = .default, handler: ((UIAlertAction) -> Void)? = nil) {
+    public init(title: String? = nil, style: UIAlertActionStyle = .default, handler: ((UIAlertAction) -> Void)? = nil) {
         self.title = title
         self.style = style
         self.handler = handler

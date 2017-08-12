@@ -17,7 +17,7 @@ enum AppAlertAction {
 
 extension AppAlertAction: AlertActionDescribing {
 
-    var title: String {
+    var title: String? {
         return "Test"
     }
 

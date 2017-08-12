@@ -17,11 +17,11 @@ enum AppAlertController {
 
 extension AppAlertController: AlertControllerDescribing {
 
-    var title: String {
+    var title: String? {
         return "Test"
     }
 
-    var message: String {
+    var message: String? {
         switch self {
         case .test: return "Test Message"
         }
