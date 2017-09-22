@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Resource"
-  s.version      = "0.2"
+  s.version      = "0.3"
   s.summary      = "Resource helps you to manage your project resources."
   s.homepage     = "https://github.com/TintPoint/Resource"
   s.author       = { "Justin Jia" => "justin.jia@tintpoint.com" }

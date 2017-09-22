@@ -1,6 +1,6 @@
 //
 //  StoryboardResourceTests.swift
-//  Resource
+//  Tests
 //
 //  Created by Justin Jia on 11/14/16.
 //  Copyright © 2016 TintPoint. MIT license.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Resource
 
-enum AppStoryboard: String {
+enum AppStoryboard {
 
     case test
 
@@ -18,7 +18,7 @@ enum AppStoryboard: String {
 extension AppStoryboard: StoryboardDescribing {
 
     var name: String {
-        return rawValue.capitalized
+        return "Test"
     }
 
     var bundle: Bundle {
@@ -29,8 +29,12 @@ extension AppStoryboard: StoryboardDescribing {
 
 class StoryboardResourceTests: XCTestCase {
 
-    func testStoryboardResource() {
+    func testStoryboardProtocolResource() {
         XCTAssertNotNil(Resource.of(AppStoryboard.test).instantiateInitialViewController())
     }
-    
+
+    func testStoryboardStructResource() {
+        XCTAssertNotNil(Resource.of(StoryboardDescription(name: "Test", bundle: Bundle(for: StoryboardResourceTests.self))).instantiateInitialViewController())
+    }
+
 }

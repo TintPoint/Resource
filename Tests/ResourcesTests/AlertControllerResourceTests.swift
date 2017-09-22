@@ -1,6 +1,6 @@
 //
 //  AlertControllerResourceTests.swift
-//  Resource
+//  Tests
 //
 //  Created by Justin Jia on 11/14/16.
 //  Copyright © 2016 TintPoint. MIT license.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Resource
 
-enum AppAlertController: String {
+enum AppAlertController {
 
     case test
 
@@ -17,11 +17,11 @@ enum AppAlertController: String {
 
 extension AppAlertController: AlertControllerDescribing {
 
-    var title: String {
-        return rawValue.capitalized
+    var title: String? {
+        return "Test"
     }
 
-    var message: String {
+    var message: String? {
         switch self {
         case .test: return "Test Message"
         }
@@ -39,7 +39,7 @@ extension AppAlertController: AlertControllerDescribing {
 
 class AlertControllerResourceTests: XCTestCase {
 
-    func testAlertControllerResource() {
+    func testAlertControllerProtocolResource() {
         let controller = Resource.of(AppAlertController.test)
         XCTAssertEqual(controller.title, "Test")
         XCTAssertEqual(controller.message, "Test Message")
@@ -47,5 +47,14 @@ class AlertControllerResourceTests: XCTestCase {
         XCTAssertEqual(controller.actions.count, 1)
         XCTAssertEqual(controller.actions.first?.title, "TestAction")
     }
-    
+
+    func testAlertControllerStructResource() {
+        let controller = Resource.of(AlertControllerDescription(title: "Title", message: "Message", style: .alert, actions: [UIAlertAction(title: "Action", style: .default)]))
+        XCTAssertEqual(controller.title, "Title")
+        XCTAssertEqual(controller.message, "Message")
+        XCTAssertEqual(controller.preferredStyle, .alert)
+        XCTAssertEqual(controller.actions.count, 1)
+        XCTAssertEqual(controller.actions.first?.title, "Action")
+    }
+
 }

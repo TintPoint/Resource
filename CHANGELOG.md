@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.3
+
+### Added
+
+- Add `DataReceivingController` and more.
+    - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
+### Changed
+
+- Change alerts and actions to Optionals.
+    - Changed by [Justin Jia](http://github.com/JustinJiaDev).
+- Update localized string.
+    - Updated by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.2
 
 ### Added

@@ -16,7 +16,7 @@ Resource helps you to manage your project resources.
 
 ## Requirements
 
-iOS 10+ / Xcode 8+ / Swift 3+
+iOS 10+ / Xcode 9+ / Swift 4+
 
 ## Installation
 
@@ -25,7 +25,7 @@ iOS 10+ / Xcode 8+ / Swift 3+
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install Resource, add the following line to your `Cartfile`:
 
 ```ogdl
-github "TintPoint/Resource" ~> 0.2
+github "TintPoint/Resource" ~> 0.3
 ```
 
 ### CocoaPods
@@ -33,19 +33,21 @@ github "TintPoint/Resource" ~> 0.2
 [CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Resource, add the following line to your `Podfile`:
 
 ```ruby
-pod 'Resource', '~> 0.2'
+pod 'Resource', '~> 0.3'
 ```
 
 ## Getting Started
 
-Define a custom enum that conforms to protocols with `Describing` postfix (list of available protocols can be found [here](#available-protocols)). For example, to manage all alert controllers, write the following code.
-
+Define a custom enum that conforms to protocols with `Describing` postfix (list of available protocols can be found [here](#available-protocols)). For example, to manage alert controllers, write the following code.
 
 ```swift
 enum Alert: AlertControllerDescribing {
     case databaseError, networkError
     var title: String {
-        return rawValue.capitalized
+        switch self {
+        case .databaseError: return "Database Error"
+        case .networkError: return "Network Error"
+        }
     }
     var message: String {
         switch self {
@@ -64,6 +66,36 @@ let alert = Resource.of(Alert.databaseError)
 present(alert, animated: true)
 ```
 
+### Generic Methods for View Controllers
+
+Define a `UIViewController` subclass that conforms to `CustomViewController` protocol.
+
+```swift
+class AppController: UIViewController, CustomViewController {
+    static let representedBy: ViewControllerDescribing = ViewControllerDescription(name: "Main", storyboard: UIStoryboard(name: "Main", bundle: Bundle.main))
+}
+```
+
+```swift
+let controller = Resource.of(AppController.self)
+print(type(of: controller)) // AppController
+```
+
+Type-safe dependency injection is also supported.
+
+```swift
+class AppController: UIViewController, DataReceivingController {
+    static let representedBy: ViewControllerDescribing = ViewControllerDescription(name: "Main", storyboard: UIStoryboard(name: "Main", bundle: Bundle.main))
+    var controllerData: (text: String, number: Int)?
+}
+```
+
+```swift
+let controller = Resource.of(AppController.self, passing: (text: "Text", number: 10))
+print(controller.controllerData?.text) // "Text"
+print(controller.controllerData?.number) // 10
+```
+
 ## Reference
 
 ### Available Protocols
@@ -75,3 +107,13 @@ present(alert, animated: true)
 > - StoryboardDescribing
 > - StringDescribing
 > - ViewControllerDescribing
+
+### Available Structs
+
+> - AlertActionDescription
+> - AlertControllerDescription
+> - LocalizedStringDescription
+> - LocalizedUserNotificationStringDescription
+> - StoryboardDescription
+> - StringDescription
+> - ViewControllerDescription

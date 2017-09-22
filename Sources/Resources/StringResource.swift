@@ -9,8 +9,20 @@
 /// A protocol that describes an item that can represent a string.
 public protocol StringDescribing {
 
-    /// The `String` that will be used to represent the content of the string.
+    /// The `String` that represents the content of the string.
     var content: String { get }
+
+}
+
+/// A struct that describes an item that can represent a string.
+public struct StringDescription: StringDescribing {
+
+    /// The `String` that represents the content of the string.
+    public let content: String
+
+    public init(content: String) {
+        self.content = content
+    }
 
 }
 
@@ -22,5 +34,5 @@ public extension Resource {
     static func of(_ describing: StringDescribing) -> String {
         return describing.content
     }
-    
+
 }
