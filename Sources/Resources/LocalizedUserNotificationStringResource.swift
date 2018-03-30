@@ -49,7 +49,7 @@ public extension Resource {
     /// - Parameter describing: An item that conforms to `LocalizedUserNotificationStringDescribing`.
     /// - Returns: A represented localized user notification string.
     static func of(_ describing: LocalizedUserNotificationStringDescribing) -> String {
-        return String.localizedUserNotificationString(forKey: describing.key, arguments: describing.arguments)
+        return NSString.localizedUserNotificationString(forKey: describing.key, arguments: describing.arguments)
     }
 
 }

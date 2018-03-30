@@ -24,7 +24,7 @@ extension AppLocalizedString: LocalizedStringDescribing {
         }
     }
 
-    var comments: String {
+    var comment: String {
         switch self {
         case .test: return "Comment"
         }
