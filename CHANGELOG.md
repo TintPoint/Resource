@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.3.1
+
+### Added
+
+- Support `Swift 4.1`.
+    - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.3
 
 ### Added
