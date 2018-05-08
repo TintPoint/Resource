@@ -6,20 +6,17 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Resource
+import XCTest
 
 enum AppLocalizedString {
-
     case test(argument: String?)
-
 }
 
 extension AppLocalizedString: LocalizedStringDescribing {
-
     var key: String {
         switch self {
-        case .test(let argument) where argument != nil: return "With Argument %@"
+        case .test(_?): return "With Argument %@"
         case .test: return "No Argument"
         }
     }
@@ -32,15 +29,13 @@ extension AppLocalizedString: LocalizedStringDescribing {
 
     var arguments: [Any]? {
         switch self {
-        case .test(let argument) where argument != nil: return [argument!]
+        case let .test(argument?): return [argument]
         case .test: return nil
         }
     }
-
 }
 
 class LocalizedStringResourceTests: XCTestCase {
-
     func testLocalizedStringProtocolResource() {
         XCTAssertEqual(Resource.of(AppLocalizedString.test(argument: "A")), "With Argument A")
         XCTAssertEqual(Resource.of(AppLocalizedString.test(argument: nil)), "No Argument")
@@ -50,5 +45,4 @@ class LocalizedStringResourceTests: XCTestCase {
         XCTAssertEqual(Resource.of(LocalizedStringDescription(key: "Key %@", comment: "Comment", arguments: ["X"])), "Key X")
         XCTAssertEqual(Resource.of(LocalizedStringDescription(key: "Key", comment: "Comment", arguments: nil)), "Key")
     }
-
 }

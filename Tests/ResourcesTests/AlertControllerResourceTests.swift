@@ -6,17 +6,14 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Resource
+import XCTest
 
 enum AppAlertController {
-
     case test
-
 }
 
 extension AppAlertController: AlertControllerDescribing {
-
     var title: String? {
         return "Test"
     }
@@ -34,11 +31,9 @@ extension AppAlertController: AlertControllerDescribing {
     var actions: [UIAlertAction] {
         return [UIAlertAction(title: "TestAction", style: .default)]
     }
-
 }
 
 class AlertControllerResourceTests: XCTestCase {
-
     func testAlertControllerProtocolResource() {
         let controller = Resource.of(AppAlertController.test)
         XCTAssertEqual(controller.title, "Test")
@@ -56,5 +51,4 @@ class AlertControllerResourceTests: XCTestCase {
         XCTAssertEqual(controller.actions.count, 1)
         XCTAssertEqual(controller.actions.first?.title, "Action")
     }
-
 }

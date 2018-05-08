@@ -6,17 +6,14 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Resource
+import XCTest
 
 enum AppStoryboard {
-
     case test
-
 }
 
 extension AppStoryboard: StoryboardDescribing {
-
     var name: String {
         return "Test"
     }
@@ -24,11 +21,9 @@ extension AppStoryboard: StoryboardDescribing {
     var bundle: Bundle {
         return Bundle(for: StoryboardResourceTests.self)
     }
-
 }
 
 class StoryboardResourceTests: XCTestCase {
-
     func testStoryboardProtocolResource() {
         XCTAssertNotNil(Resource.of(AppStoryboard.test).instantiateInitialViewController())
     }
@@ -36,5 +31,4 @@ class StoryboardResourceTests: XCTestCase {
     func testStoryboardStructResource() {
         XCTAssertNotNil(Resource.of(StoryboardDescription(name: "Test", bundle: Bundle(for: StoryboardResourceTests.self))).instantiateInitialViewController())
     }
-
 }

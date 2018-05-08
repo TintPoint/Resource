@@ -6,17 +6,14 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Resource
+import XCTest
 
 enum AppViewController {
-
     case test, data
-
 }
 
 extension AppViewController: ViewControllerDescribing {
-
     var name: String {
         switch self {
         case .test: return "Test"
@@ -27,24 +24,18 @@ extension AppViewController: ViewControllerDescribing {
     var storyboard: UIStoryboard {
         return Resource.of(AppStoryboard.test)
     }
-
 }
 
 class CustomAppController: UIViewController, CustomViewController {
-
     static let representedBy: ViewControllerDescribing = AppViewController.test
-
 }
 
 class DataReceivingAppController: UIViewController, DataReceivingController {
-
     static let representedBy: ViewControllerDescribing = AppViewController.data
     var controllerData: (String, Int)?
-
 }
 
 class ViewControllerResourceTests: XCTestCase {
-
     func testViewControllerProtocolResource() {
         XCTAssertEqual(Resource.of(AppViewController.test).title, "Test")
     }
@@ -67,5 +58,4 @@ class ViewControllerResourceTests: XCTestCase {
         XCTAssertEqual(controller.controllerData?.0, data.0)
         XCTAssertEqual(controller.controllerData?.1, data.1)
     }
-
 }

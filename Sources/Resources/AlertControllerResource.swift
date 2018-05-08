@@ -8,7 +8,6 @@
 
 /// A protocol that describes an item that can represent an alert controller.
 public protocol AlertControllerDescribing {
-
     /// The `String` that represents the title of the alert controller.
     var title: String? { get }
 
@@ -20,11 +19,9 @@ public protocol AlertControllerDescribing {
 
     /// The array of `UIAlertAction` that represents the actions of the alert controller.
     var actions: [UIAlertAction] { get }
-
 }
 
 public extension AlertControllerDescribing {
-
     var title: String? {
         return nil
     }
@@ -36,12 +33,10 @@ public extension AlertControllerDescribing {
     var style: UIAlertControllerStyle {
         return .alert
     }
-
 }
 
 /// A struct that describes an item that can represent an alert controller.
 public struct AlertControllerDescription: AlertControllerDescribing {
-
     /// The `String` that represents the title of the alert controller.
     public let title: String?
 
@@ -60,11 +55,9 @@ public struct AlertControllerDescription: AlertControllerDescribing {
         self.style = style
         self.actions = actions
     }
-
 }
 
 public extension Resource {
-
     /// Returns a `UIAlertController` that is represented by the item that conforms to `AlertControllerDescribing`.
     /// - Parameter describing: An item that conforms to `AlertControllerDescribing`.
     /// - Returns: A represented alert controller.
@@ -73,5 +66,4 @@ public extension Resource {
         describing.actions.forEach { controller.addAction($0) }
         return controller
     }
-
 }

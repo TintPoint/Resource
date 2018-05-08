@@ -8,7 +8,6 @@
 
 /// A protocol that describes an item that can represent a localized string.
 public protocol LocalizedStringDescribing {
-
     /// The `String` that represents the key of the localized string.
     var key: String { get }
 
@@ -26,11 +25,9 @@ public protocol LocalizedStringDescribing {
 
     /// The array of `Any` that represents the arguments of the localized string.
     var arguments: [Any]? { get }
-
 }
 
 public extension LocalizedStringDescribing {
-
     var tableName: String? {
         return nil
     }
@@ -50,12 +47,10 @@ public extension LocalizedStringDescribing {
     var arguments: [Any]? {
         return nil
     }
-
 }
 
 /// A struct that describes an item that can represent a localized string.
 public struct LocalizedStringDescription: LocalizedStringDescribing {
-
     /// The `String` that represents the key of the localized string.
     public let key: String
 
@@ -82,11 +77,9 @@ public struct LocalizedStringDescription: LocalizedStringDescribing {
         self.comment = comment
         self.arguments = arguments
     }
-
 }
 
 public extension Resource {
-
     /// Returns a `String` that is represented by the item that conforms to `LocalizedStringDescribing`.
     /// - Parameter describing: An item that conforms to `LocalizedStringDescribing`.
     /// - Returns: A represented localized string.
@@ -97,5 +90,4 @@ public extension Resource {
         }
         return String(format: localizedString, arguments: arguments)
     }
-
 }

@@ -6,25 +6,20 @@
 //  Copyright © 2016 TintPoint. MIT license.
 //
 
-import XCTest
 @testable import Resource
+import XCTest
 
 enum AppString {
-
     case test
-
 }
 
 extension AppString: StringDescribing {
-
     var content: String {
         return "Test"
     }
-
 }
 
 class StringResourceTests: XCTestCase {
-
     func testStringProtocolResource() {
         XCTAssertEqual(Resource.of(AppString.test), "Test")
     }
@@ -32,5 +27,4 @@ class StringResourceTests: XCTestCase {
     func testStringStructResource() {
         XCTAssertEqual(Resource.of(StringDescription(content: "Content")), "Content")
     }
-
 }

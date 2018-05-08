@@ -8,18 +8,15 @@
 
 /// A protocol that describes an item that can represent a view controller.
 public protocol ViewControllerDescribing {
-
     /// The `String` that represents the name of the view controller.
     var name: String { get }
 
     /// The `UIStoryboard` that represents the storyboard of the view controller.
     var storyboard: UIStoryboard { get }
-
 }
 
 /// A struct that describes an item that can represent a view controller.
 public struct ViewControllerDescription: ViewControllerDescribing {
-
     /// The `String` that represents the name of the view controller.
     public let name: String
 
@@ -30,30 +27,24 @@ public struct ViewControllerDescription: ViewControllerDescribing {
         self.name = name
         self.storyboard = storyboard
     }
-
 }
 
 /// A protocol that describes a view controller that is represented by a `ViewControllerDescribing`.
 public protocol CustomViewController: AnyObject {
-
     /// The `ViewControllerDescribing` that represents the view controller.
     static var representedBy: ViewControllerDescribing { get }
-
 }
 
 /// A protocol that describes a view controller that can receive some data during initialization.
 public protocol DataReceivingController: CustomViewController {
-
     /// An associated type that describes the type of the data that the view controller accepts.
     associatedtype ControllerData
 
     /// The `ControllerData` that stores the data transferred to the view controller.
     var controllerData: ControllerData { get set }
-
 }
 
 public extension Resource {
-
     /// Returns a `UIViewController` that is represented by the item that conforms to `ViewControllerDescribing`.
     /// - Parameter describing: An item that conforms to `ViewControllerDescribing`.
     /// - Returns: A represented view controller.
@@ -77,5 +68,4 @@ public extension Resource {
         controller.controllerData = data
         return controller
     }
-
 }

@@ -7,4 +7,4 @@
 //
 
 /// A collection of resources. Use `Resource.of()` to access needed resources.
-public enum Resource { }
+public enum Resource {}

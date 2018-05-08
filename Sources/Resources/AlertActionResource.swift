@@ -8,7 +8,6 @@
 
 /// A protocol that describes an item that can represent an alert action.
 public protocol AlertActionDescribing {
-
     /// The `String` that represents the title of the alert action.
     var title: String? { get }
 
@@ -17,11 +16,9 @@ public protocol AlertActionDescribing {
 
     /// The closure that represents the handler of the alert action.
     var handler: ((UIAlertAction) -> Void)? { get }
-
 }
 
 public extension AlertActionDescribing {
-
     var title: String? {
         return nil
     }
@@ -33,12 +30,10 @@ public extension AlertActionDescribing {
     var handler: ((UIAlertAction) -> Void)? {
         return nil
     }
-
 }
 
 /// A struct that describes an item that can represent an alert action.
 public struct AlertActionDescription: AlertActionDescribing {
-
     /// The `String` that represents the title of the alert action.
     public let title: String?
 
@@ -53,16 +48,13 @@ public struct AlertActionDescription: AlertActionDescribing {
         self.style = style
         self.handler = handler
     }
-
 }
 
 public extension Resource {
-
     /// Returns a `UIAlertAction` that is represented by the item that conforms to `AlertActionDescribing`.
     /// - Parameter describing: An item that conforms to `AlertActionDescribing`.
     /// - Returns: A represented alert action.
     static func of(_ describing: AlertActionDescribing) -> UIAlertAction {
         return UIAlertAction(title: describing.title, style: describing.style, handler: describing.handler)
     }
-
 }
