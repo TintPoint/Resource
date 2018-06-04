@@ -1,6 +1,6 @@
 # Resource
 
-[![Build Status](https://img.shields.io/travis/TintPoint/Resource.svg)](https://travis-ci.org/TintPoint/Resource)
+[![Build Status](https://travis-ci.com/TintPoint/Resource.svg?branch=master)](https://travis-ci.com/TintPoint/Resource)
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Resource.svg)](https://cocoapods.org)
 
@@ -12,7 +12,7 @@ Resource helps you to manage your project resources.
 
 - [x] Protocol oriented design
 - [x] Comprehensive unit test coverage
-- [x] [Complete documentation](http://cocoadocs.org/docsets/Resource)
+- [x] Complete documentation
 
 ## Requirements
 
