@@ -18,7 +18,7 @@ extension AppAlertAction: AlertActionDescribing {
         return "Test"
     }
 
-    var style: UIAlertActionStyle {
+    var style: UIAlertAction.Style {
         return .default
     }
 
