@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.4
+
+### Added
+
+- Support `Swift 4.1`.
+    - Added by [Justin Jia](http://github.com/JustinJiaDev).
+- Support Carthage static framework.
+    - Added by [Justin Jia](http://github.com/JustinJiaDev).
+
 ## 0.3.1
 
 ### Added
