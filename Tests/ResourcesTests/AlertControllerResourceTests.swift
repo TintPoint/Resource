@@ -24,7 +24,7 @@ extension AppAlertController: AlertControllerDescribing {
         }
     }
 
-    var style: UIAlertControllerStyle {
+    var style: UIAlertController.Style {
         return .actionSheet
     }
 

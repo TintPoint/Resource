@@ -14,8 +14,8 @@ public protocol AlertControllerDescribing {
     /// The `String` that represents the message of the alert controller.
     var message: String? { get }
 
-    /// The `UIAlertControllerStyle` that represents the style of the alert controller.
-    var style: UIAlertControllerStyle { get }
+    /// The `UIAlertController.Style` that represents the style of the alert controller.
+    var style: UIAlertController.Style { get }
 
     /// The array of `UIAlertAction` that represents the actions of the alert controller.
     var actions: [UIAlertAction] { get }
@@ -30,7 +30,7 @@ public extension AlertControllerDescribing {
         return nil
     }
 
-    var style: UIAlertControllerStyle {
+    var style: UIAlertController.Style {
         return .alert
     }
 }
@@ -43,13 +43,13 @@ public struct AlertControllerDescription: AlertControllerDescribing {
     /// The `String` that represents the message of the alert controller.
     public let message: String?
 
-    /// The `UIAlertControllerStyle` that represents the style of the alert controller.
-    public let style: UIAlertControllerStyle
+    /// The `UIAlertController.Style` that represents the style of the alert controller.
+    public let style: UIAlertController.Style
 
     /// The array of `UIAlertAction` that represents the actions of the alert controller.
     public let actions: [UIAlertAction]
 
-    public init(title: String? = nil, message: String? = nil, style: UIAlertControllerStyle = .alert, actions: [UIAlertAction]) {
+    public init(title: String? = nil, message: String? = nil, style: UIAlertController.Style = .alert, actions: [UIAlertAction]) {
         self.title = title
         self.message = message
         self.style = style

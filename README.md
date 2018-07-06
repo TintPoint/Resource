@@ -16,7 +16,7 @@ Resource helps you to manage your project resources.
 
 ## Requirements
 
-iOS 10+ / Xcode 9+ / Swift 4+
+iOS 10+ / Xcode 10+ / Swift 4.2+
 
 ## Installation
 
@@ -25,7 +25,7 @@ iOS 10+ / Xcode 9+ / Swift 4+
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager. To install Resource, add the following line to your `Cartfile`:
 
 ```ogdl
-github "TintPoint/Resource" ~> 0.3
+github "TintPoint/Resource" ~> 0.4
 ```
 
 ### CocoaPods
@@ -33,7 +33,7 @@ github "TintPoint/Resource" ~> 0.3
 [CocoaPods](https://cocoapods.org) is a centralized dependency manager. To install Resource, add the following line to your `Podfile`:
 
 ```ruby
-pod 'Resource', '~> 0.3'
+pod 'Resource', '~> 0.4'
 ```
 
 ## Getting Started
