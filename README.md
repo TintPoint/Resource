@@ -16,7 +16,7 @@ Resource helps you to manage your project resources.
 
 ## Requirements
 
-iOS 10+ / Xcode 9+ / Swift 4+
+iOS 10+ / Xcode 10+ / Swift 4.2+
 
 ## Installation
 
